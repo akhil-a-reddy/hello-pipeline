@@ -1,0 +1,9 @@
+#!/bin/sh
+ 
+ssh app@192.168.1.227 <<EOF
+  cd hello-pipeline
+  git pull
+  npm install --production
+  forever restartall
+  exit
+EOF
